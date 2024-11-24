@@ -26,3 +26,37 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 - Diferenciar Cliente PJ e Cliente PF por meio de uma tabela com chave estrangeira e uma coluna discriminadora.
 - Registrar múltiplas formas de pagamento por pedido.
 - Rastrear status e código de entrega.
+
+**Queries para Consultas**
+
+1. Recuperações simples com SELECT
+sql
+Copiar código
+SELECT * FROM Produto;
+2. Filtros com WHERE
+sql
+Copiar código
+SELECT * FROM Pedido WHERE Status = 'Pendente';
+3. Geração de Atributos Derivados
+sql
+Copiar código
+SELECT Nome, Preco * Estoque AS ValorTotalEstoque FROM Produto;
+4. Ordenação com ORDER BY
+sql
+Copiar código
+SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
+5. Condições de Filtros com HAVING
+sql
+Copiar código
+SELECT PedidoID, SUM(Quantidade) AS TotalItens
+FROM PedidoProduto
+GROUP BY PedidoID
+HAVING TotalItens > 1;
+6. Junções entre Tabelas
+sql
+Copiar código
+SELECT c.Nome AS Cliente, p.Nome AS Produto, pp.Quantidade
+FROM PedidoProduto pp
+JOIN Pedido pe ON pp.PedidoID = pe.PedidoID
+JOIN Cliente c ON pe.ClienteID = c.ClienteID
+JOIN Produto p ON pp.ProdutoID = p.ProdutoID;
