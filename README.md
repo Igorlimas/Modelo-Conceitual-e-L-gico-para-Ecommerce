@@ -12,7 +12,7 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 - Pagamento (associado a pedidos)
 - Fornecedor
 - Vendedor (possibilidade de ser também fornecedor)
->
+
 2 - Relacionamentos:
 
 - Um cliente pode realizar muitos pedidos.
@@ -33,17 +33,21 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 
 SELECT * FROM Produto;
 
+
 **2. Filtros com WHERE:**
 
 SELECT * FROM Pedido WHERE Status = 'Pendente';
+
 
 **3. Geração de Atributos Derivados:**
 
 SELECT Nome, Preco * Estoque AS ValorTotalEstoque FROM Produto;
 
+
 **4. Ordenação com ORDER BY:**
 
 SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
+
 
 **5. Condições de Filtros com HAVING:**
 
@@ -54,6 +58,7 @@ FROM PedidoProduto
 GROUP BY PedidoID
 
 HAVING TotalItens > 1;
+
 
 **6. Junções entre Tabelas**
 
