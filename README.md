@@ -29,32 +29,25 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 
 **Queries para Consultas**
 
-1. Recuperações simples com SELECT
-sql
-Copiar código
+**1. Recuperações simples com SELECT:**
 SELECT * FROM Produto;
-2. Filtros com WHERE
-sql
-Copiar código
+
+**2. Filtros com WHERE:**
 SELECT * FROM Pedido WHERE Status = 'Pendente';
-3. Geração de Atributos Derivados
-sql
-Copiar código
+
+**3. Geração de Atributos Derivados:**
 SELECT Nome, Preco * Estoque AS ValorTotalEstoque FROM Produto;
-4. Ordenação com ORDER BY
-sql
-Copiar código
+
+**4. Ordenação com ORDER BY:**
 SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
-5. Condições de Filtros com HAVING
-sql
-Copiar código
+
+**6. Condições de Filtros com HAVING**
 SELECT PedidoID, SUM(Quantidade) AS TotalItens
 FROM PedidoProduto
 GROUP BY PedidoID
 HAVING TotalItens > 1;
-6. Junções entre Tabelas
-sql
-Copiar código
+
+**7. Junções entre Tabelas**
 SELECT c.Nome AS Cliente, p.Nome AS Produto, pp.Quantidade
 FROM PedidoProduto pp
 JOIN Pedido pe ON pp.PedidoID = pe.PedidoID
