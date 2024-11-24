@@ -45,7 +45,7 @@ SELECT Nome, Preco * Estoque AS ValorTotalEstoque FROM Produto;
 
 SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
 
-**6. Condições de Filtros com HAVING:**
+**5. Condições de Filtros com HAVING:**
 
 SELECT PedidoID, SUM(Quantidade) AS TotalItens
 
@@ -55,7 +55,7 @@ GROUP BY PedidoID
 
 HAVING TotalItens > 1;
 
-**7. Junções entre Tabelas**
+**6. Junções entre Tabelas**
 
 SELECT c.Nome AS Cliente, p.Nome AS Produto, pp.Quantidade
 
