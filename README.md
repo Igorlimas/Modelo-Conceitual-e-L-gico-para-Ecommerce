@@ -48,14 +48,19 @@ SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
 **6. Condições de Filtros com HAVING:**
 
 SELECT PedidoID, SUM(Quantidade) AS TotalItens
+
 FROM PedidoProduto
+
 GROUP BY PedidoID
+
 HAVING TotalItens > 1;
 
 **7. Junções entre Tabelas**
 
 SELECT c.Nome AS Cliente, p.Nome AS Produto, pp.Quantidade
+
 FROM PedidoProduto pp
+
 JOIN Pedido pe ON pp.PedidoID = pe.PedidoID
 
 JOIN Cliente c ON pe.ClienteID = c.ClienteID
