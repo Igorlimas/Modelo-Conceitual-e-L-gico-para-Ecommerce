@@ -12,7 +12,7 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 - Pagamento (associado a pedidos)
 - Fornecedor
 - Vendedor (possibilidade de ser também fornecedor)
-
+>
 2 - Relacionamentos:
 
 - Um cliente pode realizar muitos pedidos.
