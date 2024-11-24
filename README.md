@@ -30,9 +30,11 @@ O banco de dados será modelado para refletir os requisitos do cenário:
 **Queries para Consultas**
 
 **1. Recuperações simples com SELECT:**
+
 SELECT * FROM Produto;
 
 **2. Filtros com WHERE:**
+
 SELECT * FROM Pedido WHERE Status = 'Pendente';
 
 **3. Geração de Atributos Derivados:**
@@ -41,7 +43,7 @@ SELECT Nome, Preco * Estoque AS ValorTotalEstoque FROM Produto;
 **4. Ordenação com ORDER BY:**
 SELECT Nome, Preco FROM Produto ORDER BY Preco DESC;
 
-**6. Condições de Filtros com HAVING**
+**6. Condições de Filtros com HAVING:**
 SELECT PedidoID, SUM(Quantidade) AS TotalItens
 FROM PedidoProduto
 GROUP BY PedidoID
