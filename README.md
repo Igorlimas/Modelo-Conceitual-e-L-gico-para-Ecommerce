@@ -57,5 +57,7 @@ HAVING TotalItens > 1;
 SELECT c.Nome AS Cliente, p.Nome AS Produto, pp.Quantidade
 FROM PedidoProduto pp
 JOIN Pedido pe ON pp.PedidoID = pe.PedidoID
+
 JOIN Cliente c ON pe.ClienteID = c.ClienteID
+
 JOIN Produto p ON pp.ProdutoID = p.ProdutoID;
